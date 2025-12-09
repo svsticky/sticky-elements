@@ -8,20 +8,19 @@
       background: #fafafa;
     }
   </style>
+  <link rel="stylesheet" href="../dist/styles.css" />
+
 </head>
 <body>
   <div id="demo"></div>
 
   <script type="module">
     import { html, render } from 'lit';
-    import '../dist/src/se-button.js';
+    import '../dist/src/index.js';
 
-    const header = 'Hello owc World!';
     render(
       html`
-        <se-button .header=${header}>
-          some light-dom
-        </se-button>
+        <se-button text="Hello World" />
       `,
       document.querySelector('#demo')
     );
