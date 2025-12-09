@@ -1,0 +1,11 @@
+:root {
+  --board-primary: #fa6b20;
+  --board-dark: #ca5617;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --board-primary: #000;
+    --board-dark: #161616;
+  }
+}
