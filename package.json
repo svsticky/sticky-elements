@@ -2,71 +2,41 @@
   "name": "sticky-elements",
   "description": "Sticky web component library",
   "license": "GPL-3.0-only",
-  "contributors": [{
-    "name": "Jort Willemsen",
-    "url": "https://www.npmjs.com/~jortw"
-  }, {
-    "name": "Mees Maas",
-    "url": "https://www.npmjs.com/~meesmaas"
-  }],
+  "contributors": [
+    {
+      "name": "Jort Willemsen",
+      "url": "https://www.npmjs.com/~jortw"
+    },
+    {
+      "name": "Mees Maas",
+      "url": "https://www.npmjs.com/~meesmaas"
+    }
+  ],
   "version": "0.0.1",
   "type": "module",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "exports": {
-    ".": "./dist/src/index.js"
+    ".": "./dist/src/index.js",
+    "./css": "./dist/styles.css"
   },
   "scripts": {
-    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"web-dev-server\"",
-    "build": "tsc && npm run analyze -- --exclude dist",
-    "prepublish": "tsc && npm run analyze -- --exclude dist",
-    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
-    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore"
+    "dev": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"web-dev-server\"",
+    "build": "sass src/lib/styles/styles.scss dist/styles.css --style=compressed && tsc"
   },
   "dependencies": {
     "lit": "^3.1.4"
   },
   "devDependencies": {
-    "@open-wc/eslint-config": "^12.0.3",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
     "@web/dev-server": "^0.4.6",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
+    "concurrently": "^9.2.1",
     "prettier": "^3.3.2",
+    "sass": "^1.95.0",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3"
-  },
-  "customElements": "custom-elements.json",
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "@open-wc",
-      "prettier"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "no-unused-vars": "off",
-      "import/no-unresolved": "off",
-      "import/extensions": [
-        "error",
-        "always",
-        {
-          "ignorePackages": true
-        }
-      ]
-    }
   },
   "prettier": {
     "singleQuote": true,
     "arrowParens": "avoid"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ]
   }
 }
