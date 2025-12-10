@@ -12,6 +12,9 @@
       "url": "https://www.npmjs.com/~meesmaas"
     }
   ],
+  "repository": {
+    "url": "https://github.com/svsticky/sticky-elements"
+  },
   "version": "0.0.1",
   "type": "module",
   "module": "dist/sticky-elements.js",
