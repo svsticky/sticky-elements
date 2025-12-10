@@ -15,6 +15,7 @@
   "version": "0.0.2",
   "type": "module",
   "module": "dist/sticky-elements.js",
+  "types": "dist/types.d.ts",
   "exports": {
     ".": "./dist/sticky-elements.js",
     "./css": "./dist/styles.css"
