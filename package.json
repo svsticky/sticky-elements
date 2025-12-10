@@ -1,5 +1,5 @@
 {
-  "name": "sticky-elements",
+  "name": "@svsticky/sticky-elements",
   "description": "Sticky web component library",
   "license": "GPL-3.0-only",
   "contributors": [
