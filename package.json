@@ -12,7 +12,7 @@
       "url": "https://www.npmjs.com/~meesmaas"
     }
   ],
-  "version": "0.0.2",
+  "version": "0.0.1",
   "type": "module",
   "module": "dist/sticky-elements.js",
   "types": "dist/types.d.ts",
