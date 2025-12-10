@@ -3,19 +3,21 @@
     "target": "es2021",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
     "noEmitOnError": true,
     "lib": ["es2021", "dom", "DOM.Iterable"],
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "outDir": "dist",
+    "outFile": "dist/types",
     "sourceMap": true,
     "inlineSources": true,
     "rootDir": "./",
     "declaration": true,
+    "emitDeclarationOnly": true,
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
-  "include": ["**/*.ts"]
+  "include": ["lib/components"]
 }
