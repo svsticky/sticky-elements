@@ -8,6 +8,9 @@ type ButtonType = 'primary' | 'secondary'
 export class SeButton extends LitElement {
   static styles = css`
     button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       border: var(--button-border);
       box-sizing: border-box;
       height: 50px;
@@ -23,10 +26,18 @@ export class SeButton extends LitElement {
       background-color: var(--button-secondary-bg);
       color: var(--button-secondary-text);
     }
+
+    .icon {
+      margin-left: 10px;
+      height: 35px;
+    }
   `;
 
   @property({ type: String})
   buttonType: ButtonType = 'primary';
+
+  @property({ type: String})
+  icon: string = '';
 
   @property({ type: Boolean })
   clicked = false;
@@ -39,7 +50,11 @@ export class SeButton extends LitElement {
       primary: this.buttonType === 'primary', 
       secondary: this.buttonType === 'secondary' 
     };
-    
-    return html`<button class=${classMap(classes)}>${this.text}</button>`;
+
+    return html`
+      <button class=${classMap(classes)}>
+        ${this.text}
+        ${this.icon && html`<img class="icon" src=${this.icon} />`}
+      </button>`;
   }
 }
