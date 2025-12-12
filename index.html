@@ -8,7 +8,7 @@
       background: #fafafa;
     }
   </style>
-  <link rel="stylesheet" href="./dist/styles.css" />
+  <link rel="stylesheet" href="./dist/lib/styles/styles.css" />
 
 </head>
 <body>
@@ -16,11 +16,12 @@
 
   <script type="module">
     import { html, render } from 'lit';
-    import './dist/sticky-elements.js';
+    import './dist/lib/index.js';
 
     render(
       html`
-        <se-button text="Hello World" />
+        <se-button text="Hello World"></se-button>
+        <se-button text="Secondary Button" buttonType="secondary"></se-button>
       `,
       document.querySelector('#demo')
     );

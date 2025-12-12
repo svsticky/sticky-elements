@@ -1,0 +1,19 @@
+:root {
+  --button-primary-bg: var(--board-primary);
+  --button-primary-text: white;
+  
+  --button-secondary-bg: grey;
+  --button-secondary-text: black;
+  
+  --button-border: 0px;
+
+  @media (prefers-color-scheme: dark) {
+    --button-primary-bg: var(--board-primary-dark);
+    --button-primary-text: white;
+  
+    --button-secondary-bg: black;
+    --button-secondary-text: white;
+  
+    --button-border: 2px var(--board-primary-dark);
+  }
+}

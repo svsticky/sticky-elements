@@ -1,25 +1,32 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import {classMap} from 'lit/directives/class-map.js';
+
+type ButtonType = 'primary' | 'secondary'
 
 @customElement("se-button")
 export class SeButton extends LitElement {
   static styles = css`
     button {
-      background-color: var(--board-primary, "#000");
-      font-weight: 600;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
+      border: var(--button-border);
+      box-sizing: border-box;
       height: 50px;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
+      padding: 10px 20px;
     }
 
-    button:hover {
-      background-color: var(--board-dark, "#000");
+    .primary {
+      background-color: var(--button-primary-bg);
+      color: var(--button-primary-text);
+    }
+
+    .secondary {
+      background-color: var(--button-secondary-bg);
+      color: var(--button-secondary-text);
     }
   `;
+
+  @property({ type: String})
+  buttonType: ButtonType = 'primary';
 
   @property({ type: Boolean })
   clicked = false;
@@ -28,6 +35,11 @@ export class SeButton extends LitElement {
   text = "Hello World";
 
   render() {
-    return html`<button>${this.text}</button>`;
+    const classes = { 
+      primary: this.buttonType === 'primary', 
+      secondary: this.buttonType === 'secondary' 
+    };
+    
+    return html`<button class=${classMap(classes)}>${this.text}</button>`;
   }
 }
