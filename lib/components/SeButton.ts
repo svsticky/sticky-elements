@@ -11,12 +11,15 @@ export class SeButton extends LitElement {
       display: flex;
       flex-direction: row;
       align-items: center;
-      border: var(--button-border);
       box-sizing: border-box;
       height: 50px;
       padding: 10px 20px;
       font-weight: bold;
       font-size: 20px;
+      border-radius: var(--border-radius);
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
     .primary {
@@ -24,9 +27,18 @@ export class SeButton extends LitElement {
       color: var(--button-primary-text);
     }
 
+    .primary:hover {
+      background-color: var(--button-primary-hover);
+    }
+
     .secondary {
       background-color: var(--button-secondary-bg);
       color: var(--button-secondary-text);
+      border: var(--button-border);
+    }
+
+    .secondary:hover {
+      background-color: var(--button-secondary-hover);
     }
 
     .icon {
