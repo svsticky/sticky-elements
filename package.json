@@ -23,6 +23,7 @@
     "./css": "./dist/lib/styles/styles.css"
   },
   "scripts": {
+    "dev:watch": "concurrently \"tsc -w\" \"sass --watch ./lib/styles:./dist/lib/styles\" \"vite\"",
     "dev": "vite",
     "build": "tsc && sass ./lib/styles:./dist/lib/styles"
   },
@@ -31,14 +32,14 @@
   },
   "devDependencies": {
     "@types/node": "^24.10.2",
+    "concurrently": "^9.2.1",
     "path": "^0.12.7",
     "prettier": "^3.3.2",
     "sass": "^1.95.1",
     "sass-embedded": "^1.95.1",
     "tslib": "^2.8.1",
     "typescript": "^5.5.3",
-    "url": "^0.11.4",
-    "vite": "npm:rolldown-vite@7.2.5"
+    "url": "^0.11.4"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.2.5"
