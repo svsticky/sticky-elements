@@ -53,11 +53,18 @@ export class SeButton extends LitElement {
   @property({ type: String})
   icon: string = '';
 
-  @property({ type: Boolean })
-  clicked = false;
+  @property({ attribute: false })
+  onClick: (() => void) | null = null;
 
   @property({ type: String })
   text = "Hello World";
+
+  private handleClick() {
+    // Only executes this function if onClick exists.
+    if (this.onClick) {
+      this.onClick();
+    }
+  }
 
   render() {
     const classes = { 
@@ -66,7 +73,7 @@ export class SeButton extends LitElement {
     };
 
     return html`
-      <button class=${classMap(classes)}>
+      <button @click=${() => this.handleClick()} class=${classMap(classes)}>
         ${this.text}
         ${this.icon && html`<img class="icon" src=${this.icon} />`}
       </button>`;
