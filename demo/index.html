@@ -8,7 +8,7 @@
       background: #fafafa;
     }
   </style>
-  <link rel="stylesheet" href="./dist/lib/styles/styles.css" />
+  <link rel="stylesheet" href="../dist/lib/styles/styles.css" />
 
 </head>
 <body>
@@ -16,13 +16,13 @@
 
   <script type="module">
     import { html, render } from 'lit';
-    import './dist/lib/index.js';
+    import '../dist/lib/index.js';
 
     render(
       html`
         <se-button text="Hello World"></se-button>
         <se-button text="Secondary Button" buttonType="secondary"></se-button>
-        <se-button text="Icon Button" icon="./assets/icon.svg" />
+        <se-button text="Icon Button" icon="../assets/icon.svg" />
       `,
       document.querySelector('#demo')
     );

@@ -15,6 +15,8 @@ export class SeButton extends LitElement {
       box-sizing: border-box;
       height: 50px;
       padding: 10px 20px;
+      font-weight: bold;
+      font-size: 20px;
     }
 
     .primary {
