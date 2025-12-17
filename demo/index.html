@@ -31,8 +31,10 @@
     render(
       html`
         <se-button text="Hello World"></se-button>
-        <se-button text="Secondary Button" buttonType="secondary"></se-button>
-        <se-button text="Icon Button" icon="../assets/icon.svg" />
+        <se-button text="Secondary Button" buttonType="secondary">
+          <img slot="icon" src="../assets/icon.svg" />
+        </se-button>
+        <se-button text="Icon Button" />
       `,
       document.querySelector('#demo')
     );

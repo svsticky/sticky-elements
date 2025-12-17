@@ -41,7 +41,7 @@ export class SeButton extends LitElement {
       background-color: var(--button-secondary-hover);
     }
 
-    .icon {
+    ::slotted(*) {
       margin-left: 10px;
       height: 35px;
     }
@@ -49,9 +49,6 @@ export class SeButton extends LitElement {
 
   @property({ type: String})
   buttonType: ButtonType = 'primary';
-
-  @property({ type: String})
-  icon: string = '';
 
   @property({ attribute: false })
   onClick: (() => void) | null = null;
@@ -71,11 +68,11 @@ export class SeButton extends LitElement {
       primary: this.buttonType === 'primary', 
       secondary: this.buttonType === 'secondary' 
     };
-
+    
     return html`
       <button @click=${() => this.handleClick()} class=${classMap(classes)}>
         ${this.text}
-        ${this.icon && html`<img class="icon" src=${this.icon} />`}
+        <slot class="slot" name="icon"></slot>
       </button>`;
   }
 }
