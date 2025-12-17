@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <style>
+    body {
+      background: var(--background);
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #demo {
+      display: flex;
+      height: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  </style>
+  <link rel="stylesheet" href="../dist/lib/styles/styles.css" />
+
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit';
+    import '../dist/lib/index.js';
+
+    render(
+      html`
+        <se-button text="Hello World"></se-button>
+        <se-button text="Secondary Button" buttonType="secondary">
+          <img slot="icon" src="../assets/icon.svg" />
+        </se-button>
+        <se-button text="Icon Button" />
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>

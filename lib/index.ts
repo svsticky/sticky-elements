@@ -1,4 +1,3 @@
-import './styles/styles.scss';
 import { SeButton } from "./components/SeButton.js";
 export { SeButton };
 

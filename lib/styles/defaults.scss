@@ -1,0 +1,11 @@
+// Default values for styling used in multiple components
+
+:root {
+  --border-radius: 10px;
+  --background: white;
+
+  @media (prefers-color-scheme: dark) {
+    --background: black;
+    
+  }
+}

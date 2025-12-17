@@ -10,14 +10,15 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "outFile": "dist/types",
+    "outDir": "dist",
     "sourceMap": true,
     "inlineSources": true,
     "rootDir": "./",
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "incremental": true,
     "skipLibCheck": true,
+    
   },
   "include": ["lib"]
 }

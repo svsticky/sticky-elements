@@ -1,1 +1,5 @@
-@use "colors.scss";
+@use "./defaults.scss";
+@use "./colors.scss";
+
+// components
+@use "./components/se-button.scss"

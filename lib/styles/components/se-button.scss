@@ -1,0 +1,23 @@
+:root {
+  --button-primary-bg: var(--board-primary);
+  --button-primary-text: white;
+  --button-primary-hover: var(--board-primary-light);
+  
+  --button-secondary-bg: white;
+  --button-secondary-text: black;
+  --button-secondary-hover: rgb(237, 237, 237);
+
+  --button-border: 2px solid rgb(237, 237, 237);
+
+  @media (prefers-color-scheme: dark) {
+    --button-primary-bg: var(--board-primary-dark);
+    --button-primary-text: white;
+    --button-primary-hover: var(--board-primary);
+  
+    --button-secondary-bg: rgb(20, 20, 20);
+    --button-secondary-text: white;
+    --button-secondary-hover: black;
+
+    --button-border: 2px solid rgb(59, 59, 59);
+  }
+}
