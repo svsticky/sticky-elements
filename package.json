@@ -23,8 +23,7 @@
     "./css": "./dist/lib/styles/styles.css"
   },
   "scripts": {
-    "dev:watch": "concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"sass --watch ./lib/styles:./dist/lib/styles\" \"web-dev-server\"",
-    "dev": "vite",
+    "dev": "concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"sass --watch ./lib/styles:./dist/lib/styles\" \"web-dev-server\"",
     "build": "tsc && sass ./lib/styles:./dist/lib/styles"
   },
   "dependencies": {
