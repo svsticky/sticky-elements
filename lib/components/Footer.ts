@@ -21,6 +21,7 @@ export class SeFooter extends LitElement {
     footer .footer-icons {
       display: flex;
       gap: 2rem;
+    }
 
     footer .footer-icons a {
       color: white;
@@ -35,6 +36,7 @@ export class SeFooter extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
       <footer>
         <img
           src="https://public.svsticky.nl/logos/hoofd_outline_wit.svg"
