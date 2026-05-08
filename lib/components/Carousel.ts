@@ -2,7 +2,7 @@ import { css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
-type Slide = { link: string, title: string, alt: string };
+export type Slide = { link: string, title: string, alt: string };
 
 function mod(n: number, m: number) {
   return n < 0 ? m + n : n % m;

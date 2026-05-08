@@ -29,19 +29,16 @@
     }
 
     se-nav {
-      display: block;
+      display: inline-block;
       width: 100%;
       background: #fa6b20;
+      height: 5rem;
     }
 
-    main {
-      margin: 4rem;
-      min-height: 65vh;
-    }
-
-    se-carousel {
-      height: 300px;
+    se-header {
       width: 100%;
+      height: 300px;
+      display: inline-block;
     }
   </style>
   <link rel="stylesheet" href="../dist/lib/styles/styles.css" />
@@ -84,12 +81,14 @@
       { link: "https://picsum.photos/id/65/1080/1920", alt: "Alt 6", title: "Title 6" },
     ]
 
+
     render(
       html`
         <se-nav menus=${JSON.stringify(menus)}></se-nav>
-        <main>
-          <se-carousel slides=${JSON.stringify(slides)}></se-carousel>
-        </main>
+        <se-header slides=${JSON.stringify(slides)}>
+          <h1 style="color: white">Title</h1>
+          <p style="color: white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus deserunt aperiam labore eaque nemo nihil corrupti provident aliquid minus quasi? Quidem perspiciatis, dolores laborum laudantium libero enim et temporibus optio!</p>
+        </se-header>
         <se-footer></se-footer>
       `,
       document.querySelector('#demo')
