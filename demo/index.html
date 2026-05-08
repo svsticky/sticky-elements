@@ -3,7 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /> -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+    :root {
+      --board-colour: #fa6b20;
+      font-family: "Outfit", Arial, sans-serif;
+    }
+
     body {
       background: var(--background);
       height: 100vh;
@@ -21,6 +29,13 @@
       position: absolute;
       bottom: 0;
     }
+
+    se-nav {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background: #fa6b20;
+    }
   </style>
   <link rel="stylesheet" href="../dist/lib/styles/styles.css" />
 </head>
@@ -31,9 +46,32 @@
     import { html, render } from 'lit';
     import '../dist/lib/index.js';
 
+    const menus = [
+      { title: "Home", to: "/" },
+      { title: "Vereniging", submenu: [
+          { title: "Activiteiten", to: "/vereniging/activiteiten" },
+          { title: "Bestuur", to: "/vereniging/bestuur" },
+          { title: "Commissies", to: "/vereniging/commissies" },
+          { title: "Contact", to: "/vereniging/contact" }
+      ] },
+      { title: "Studie", submenu: [
+          { title: "Medezeggenschap", to: "/studie/medezeggenschap" },
+          { title: "OER", to: "/studie/oer" },
+          { title: "Boekverkoop", to: "https://svsticky.nl/boeken" }
+      ] },
+      { title: "Carriere", submenu: [
+          { title: "Partners", to: "/carriere/partners" },
+          { title: "Samenwerking", to: "/carriere/samenwerking" },
+          { title: "Vacatures", to: "/carriere/vacatures" }
+      ] },
+      { title: "Koala", to: "https://koala.svsticky.nl", type: "button" },
+      { title: "Word lid", to: "https://wordlid.svsticky.nl", type: "button" }
+    ];
+
     render(
       html`
-        <se-footer />
+        <se-nav menus=${JSON.stringify(menus)}></se-nav>
+        <se-footer></se-footer>
       `,
       document.querySelector('#demo')
     );
