@@ -33,16 +33,6 @@
       width: 100%;
       background: #fa6b20;
     }
-
-    main {
-      margin: 4rem;
-      min-height: 65vh;
-    }
-
-    se-carousel {
-      height: 300px;
-      width: 100%;
-    }
   </style>
   <link rel="stylesheet" href="../dist/lib/styles/styles.css" />
 </head>
@@ -87,9 +77,7 @@
     render(
       html`
         <se-nav menus=${JSON.stringify(menus)}></se-nav>
-        <main>
-          <se-carousel slides=${JSON.stringify(slides)}></se-carousel>
-        </main>
+        <se-header></se-header>
         <se-footer></se-footer>
       `,
       document.querySelector('#demo')
