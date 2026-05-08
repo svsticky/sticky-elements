@@ -25,14 +25,23 @@
 
     se-footer {
       width: 100%;
-      position: absolute;
-      bottom: 0;
+      display: block;
     }
 
     se-nav {
       display: block;
       width: 100%;
       background: #fa6b20;
+    }
+
+    main {
+      margin: 4rem;
+      min-height: 65vh;
+    }
+
+    se-carousel {
+      height: 300px;
+      width: 100%;
     }
   </style>
   <link rel="stylesheet" href="../dist/lib/styles/styles.css" />
@@ -66,11 +75,20 @@
       { title: "Word lid", to: "https://wordlid.svsticky.nl", type: "button" }
     ];
 
+    const slides = [
+      { link: "https://picsum.photos/id/25/1080/1920", alt: "Alt 1", title: "Title 1" },
+      { link: "https://picsum.photos/id/29/1080/1920", alt: "Alt 2", title: "Title 2" },
+      { link: "https://picsum.photos/id/37/1080/1920", alt: "Alt 3", title: "Title 3" },
+      { link: "https://picsum.photos/id/49/1080/1920", alt: "Alt 4", title: "Title 4" },
+      { link: "https://picsum.photos/id/57/1080/1920", alt: "Alt 5", title: "Title 5" },
+      { link: "https://picsum.photos/id/65/1080/1920", alt: "Alt 6", title: "Title 6" },
+    ]
+
     render(
       html`
         <se-nav menus=${JSON.stringify(menus)}></se-nav>
         <main>
-          <se-carousel></se-carousel>
+          <se-carousel slides=${JSON.stringify(slides)}></se-carousel>
         </main>
         <se-footer></se-footer>
       `,
